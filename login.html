@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0a3a34b;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url(log.jpg);
+        
+        }
+
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-image: url(log-c.jpg);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4fc253;
+            color: #fff;
+            padding: 18px;
+            border: 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #0056b3;  
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="hem.html" method="post" onsubmit="return validateForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="reset" onclick="a()">Login</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username.trim() === "") {
+                alert("Please enter a username");
+                return false;
+            }
+
+            if (password.trim() === "") {
+                alert("Please enter a password");
+                return false;
+            }
+
+            return true;
+        }
+        function a()
+        {
+            alert("Successfully logined");
+        }
+    </script>
+</body>
+</html>
